@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Cache;
 class BookController extends Controller
 {
     public function __construct(
-        protected Request $request
+        protected Request $request,
     ) { }
     /**
      * Display a listing of the resource.
