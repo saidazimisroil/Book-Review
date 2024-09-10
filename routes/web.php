@@ -13,3 +13,7 @@ Route::resource('books', BookController::class)
 
 Route::resource('books.reviews', ReviewsController::class)
     ->only(['create', 'store']);
+
+Route::post('books/{book}/reviews', [ReviewsController::class, 'store'])
+    ->middleware('throttle:reviews')
+    ->name('books.reviews.store');
